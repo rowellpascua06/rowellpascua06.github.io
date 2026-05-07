@@ -523,7 +523,7 @@ body.dark-theme .logo-img {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
 }
 
@@ -543,16 +543,11 @@ body.dark-theme .logo-img {
     width: 100%;
     height: 210px;
     object-fit: cover;
+    object-position: center;
 }
 
 .project-content {
     padding: 20px;
-}
-
-.project-links {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
 }
 
 .project-tags {
@@ -561,6 +556,22 @@ body.dark-theme .logo-img {
     gap: 15px;
     color: var(--primary-color);
     font-weight: 500;
+}
+
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card img {
+        height: 190px;
+    }
 }
 /* =========================================
    CONTACT
